@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>New Department</h2>
+
+<mat-dialog-content>
+<span>Department </span>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Department Name</mat-label>
+    <input matInput type="text" [(ngModel)]="DepartmentName" placeholder="Ejem: IT"/>
+  </mat-form-field>
+</p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="buttonContainer">
+    <button class="button create" id="create" (click)="closeAndSend()">Create</button>
+    <button class="button close" id="close" (click)="close()">Close</button>
+</mat-dialog-actions>
+

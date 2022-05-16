@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>New Employee</h2>
+
+<mat-dialog-content>
+<span>Employee </span>
+<mat-form-field appearance="fill">
+  <mat-label>First Name</mat-label>
+  <input matInput type="text" [(ngModel)]="FirstName" placeholder="Ejem: Pablo"/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Last Name</mat-label>
+  <input matInput type="text" [(ngModel)]="LastName" placeholder="Ejem: Rodriguez"/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Department</mat-label>
+  <mat-select [formControl]="departmentControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let department of departments"  [value]="department">
+      {{department}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="departmentControl.hasError('required')">Please choose an animal</mat-error>
+  <mat-hint>{{departmentControl.value?.sound}}</mat-hint>
+</mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions class="buttonContainer">
+  <button id="create" class="button create" (click)="close()">Add</button>
+  <button id="close" class="button close" (click)="close()">Close</button>
+</mat-dialog-actions>
+
+

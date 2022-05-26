@@ -1,0 +1,88 @@
+header {
+  display: flex;
+  background-color: #000;
+  padding-top: 18px;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: center;
+
+}
+
+
+header div#logo {
+  flex-grow: 6;
+
+}
+
+header div.HeaderContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header ul{
+  list-style-type: none;
+  margin: 0;padding: 0;
+  width: 400px;
+  height: 100%;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+header ul li {
+  flex-grow: 1;
+  padding-right: 15px;
+  width: 100px; height: 100%;
+}
+
+header ul li a {
+  color: #fff;
+  font-size: 1em;
+  text-transform: 1em;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+header div:nth-child(1) {
+  flex-grow: 8;
+  width: 125px;
+  padding-bottom: 15px;
+}
+
+header div:nth-child(1) img {
+  margin-left: 20px;
+}
+
+
+/* #search {
+  background: #3a3a3a url(../../../assets/magnify2.png) no-repeat 5px 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 4px 4px 4px 25px;
+
+} */
+
+#magnify {
+  cursor: pointer;
+}
+
+.container {
+  padding: 80px;
+}
+
+a.submit{
+  color: white;
+  cursor: pointer;
+  font-style: normal;
+  text-decoration: none;
+  padding-left: 3px;
+}
+

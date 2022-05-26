@@ -7,14 +7,14 @@
   </div>
 
   <div  class="CardContainer">
-    <mat-card *ngFor="let department of departments" class="departmentCard">
+    <mat-card *ngFor="let department of departmentsFromBackEnd" class="departmentCard">
       <mat-card-title>{{department.DepartmentName}}</mat-card-title>
       <mat-card-subtitle>Active: {{department.Active}}</mat-card-subtitle>
       <mat-card-actions class="card-actions">
         <h2>Actions</h2>
         <div class="buttonContainer">
           <button class="button edit" (click)="openEditDialog(department)" id="edit" mat-button>Edit</button>
-          <button class="button delete" id="delete" mat-button>Delete</button>
+          <button class="button delete" (click)="DeleteDepartment(department)" id="delete" mat-button>Delete</button>
         </div>
       </mat-card-actions>
     </mat-card>

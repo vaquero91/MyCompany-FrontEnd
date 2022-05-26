@@ -15,6 +15,10 @@ import { AddDepartmentDialogComponent } from './Components/add-department-dialog
 import { EditDepartmentDialogComponent } from './Components/edit-department-dialog/edit-department-dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { HeaderComponent } from './Components/Header/Header.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
     AddEmployeeDialogComponent,
     AddDepartmentDialogComponent,
     EditDepartmentDialogComponent,
+    HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,16 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path:'Departments', component: DepartmentsComponent},
+      { path:'Employees', component: EmployeesComponent},
+
+      { path:'', redirectTo:'Departments',pathMatch:'full'},
+      { path:'**', redirectTo:'Departments',pathMatch:'full'}
+
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

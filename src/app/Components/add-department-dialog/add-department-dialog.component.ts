@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DepartmentService } from 'src/app/Services/DepartmentService.service';
 import { DepartmentsComponent } from '../departments/departments.component';
 
 @Component({
@@ -9,7 +10,8 @@ import { DepartmentsComponent } from '../departments/departments.component';
 })
 export class AddDepartmentDialogComponent implements OnInit {
   DepartmentName:string='';
-  constructor(public dialogRef: MatDialogRef<DepartmentsComponent>) { }
+  _departmentService:DepartmentService;
+  constructor(public dialogRef: MatDialogRef<DepartmentsComponent>, private departmentService:DepartmentService) { this._departmentService = departmentService }
 
   ngOnInit(): void {
   }
@@ -18,6 +20,7 @@ export class AddDepartmentDialogComponent implements OnInit {
     this.dialogRef.close();
   }
   closeAndSend(){
+    this._departmentService.newDepartment(this.DepartmentName)
     this.close();
   }
 }

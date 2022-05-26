@@ -2,24 +2,22 @@
 
 <mat-dialog-content>
 
-<span>Department </span>
-
 <mat-form-field appearance="fill">
-  <mat-label>Department</mat-label>
-  <mat-select [formControl]="animalControl" required>
+  <mat-label>New Department Name</mat-label>
+  <!-- <mat-select [formControl]="animalControl" required>
     <mat-option>--</mat-option>
     <mat-option *ngFor="let department of departments"  [value]="department">
       {{department}}
     </mat-option>
   </mat-select>
   <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-  <!-- <input matInput type="text" [(ngModel)]="DepartmentName" placeholder={{Department.DepartmentName}}/> -->
+  <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+  <input matInput type="text" [(ngModel)]="DepartmentName" placeholder={{Department.DepartmentName}}/>
 </mat-form-field>
-
+<div *ngIf="!validation">Validation Failed</div>
 </mat-dialog-content>
 
 <mat-dialog-actions class="buttonContainer">
-    <button id="create" class="button create" (click)="close()">Save</button>
+    <button id="create" class="button create" (click)="UpdateDepartment()" >Save</button>
     <button id="close" class="button close" (click)="close()">Close</button>
 </mat-dialog-actions>
